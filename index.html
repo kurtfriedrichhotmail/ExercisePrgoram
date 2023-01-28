@@ -9,9 +9,46 @@
 </head>
 <body>
     <h2>Calorie Burner</h2>
+    <p>Please Select Your Exercise Choice</p>
+    <div id = "ExerciseRadio">
+
+<input type = "radio" id ="situps" name="exercise" value="situps" />
+<label for = "situps"> Sit Ups </label>
+
+<input type = "radio" id="pushups" name="exercise" value="pushups" />
+<label type = "pushups"> Push Ups</label>
+
+<input type = "radio" id="jumprope" name="exercise" value="jumprope" />
+<label for = "jumprope" >Jump Rope</label>
+
+        </div>
 
 
+        <div>
+        <p> How many minutes did you exrcise</p><br>
+        <input type="number" value=" " id="TextBox" /><br>
+        <button type="button"  id="minButton">Add</button><br>
 
+
+        </div>
+
+<div>
+    <button type="button"  id="mostBurnedButton">Most Burned</button><br>
+
+     <input type="number" value=" " id="Text4Cal" /><br>
+
+</div>
+<div>
+
+    <button type="button"  id="showAllButton">Show All</button>
+<ul>
+    <li>Sit Ups</li>
+    <li>Push Ups</li>
+    <li>Jump Rope</li>
+  </ul>
+
+
+</div>
 
     <script src="main.js"></script>
 </body>
