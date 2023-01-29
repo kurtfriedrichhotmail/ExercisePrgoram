@@ -5,27 +5,17 @@ let output = document.getElementById("output");
 
 // code that needs to wait until DOM is loaded
 document.addEventListener("DOMContentLoaded", function (event) {
-    document.getElementById("showAllButton").addEventListener("click", function () {
-        console.log(exerciseArray);
-        let message ;
-        for (i = 0; i < exerciseArray.length; i++) {
-            message = message + exerciseArray[i].situps + "  " + exerciseArray[i].pushups + "  "+ exerciseArray[i].jumprope + "\n";
-            console.log(message);
-        }
-        document.getElementById("output").value = message;
-    });
-});
+  
 
-exerciseArray = []; // define an array of type of exercise
+    exerciseArray = []; // define an array of type of exercise
 
-
-    let Exercise = function (which, length, calories) {
+    let Exercise = function  (which, length, calories) {
         this.exerciseName = which;
         this.exerciseLenght = length;
         this.exerciseCalories = calories;
         
-    
-    
+
+      // end object constructor
       };
     
     // Create instances of Exercise objects
@@ -34,17 +24,18 @@ exerciseArray = []; // define an array of type of exercise
     let pushups = new Exercise("Pushups", 1 , 15);
     let jumprope = new Exercise("Jumprope", 1 , 18);
 
-    
+    exerciseArray.push(Exercise);
+
     document.getElementById("add").onclick = function () {
-        let radioButtonGroup = document.getElementsByName("exercise");
-        let checkedRadio = Array.from(radioButtonGroup).find(
+        let exercise1 = document.getElementsByName("exercise");
+        let checkedRadio = Array.from(exercise1).find(
           (radio) => radio.checked
         );
         alert("You have selected : " + checkedRadio.value);
       };
 
-    
-    exerciseArray.push(Exercise);
+     
+   
 
         
 
@@ -54,6 +45,16 @@ exerciseArray = []; // define an array of type of exercise
     output.innerHTML += pushups.exerciseName + " " + pushups.exerciseLenght + " " + pushups.exerciseCalories + "<br><br>";
     output.innerHTML += jumprope.exerciseName + "  " + jumprope.exerciseLenght + "  " + jumprope.exerciseCalories
 
+
+    document.getElementById("showAllButton").addEventListener("click", function () {
+        console.log(exerciseArray);
+        let message ;
+        for (i = 0; i < exerciseArray.length; i++) {
+            message = message + exerciseArray[i].situps + "  " + exerciseArray[i].pushups + "  "+ exerciseArray[i].jumprope + "\n";
+            console.log(message);
+        }
+        document.getElementById("output").value = message;
+    });
       
        
     document.getElementById("situps").value = "";
@@ -61,7 +62,7 @@ exerciseArray = []; // define an array of type of exercise
     document.getElementById("jumprope").value = "";
 
     
-
+});
 
 
 
